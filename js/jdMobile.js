@@ -1,62 +1,5 @@
 //页面加载事件
 window.onload = function () {
-    /*固定导航透明度*/
-    function headerTop() {
-        //获取固定导航
-        let j_header = document.querySelector(".j_header");
-        //获取轮播图
-        let j_slideshow = document.querySelector(".j_slideshow");
-        //获取轮播图的高度
-        let j_slideshowHeight = $(".j_slideshow").height();
-        console.log("事件外 轮播的高度" + j_slideshowHeight);//为啥在onscroll事件外输出的高度是2489？？？ 事件内输出的是311 事件内才是正确的
-        window.onscroll = function () {
-            //获取文档滚动出屏幕的top距离
-            let offerTop = $(document).scrollTop();
-            //设置rgba中的a 文档滚出屏幕的top距离除以轮播区域的高度
-            let opacity = offerTop / j_slideshowHeight;
-
-            console.log(offerTop + "  " + j_slideshowHeight + "  " + opacity);
-
-            console.log("事件内 轮播的高度" + $(".j_slideshow").height());//311
-
-            /*//设置透明度 判断透明度值是否大于1 是则设置透明度 否则什么都不做*/
-            opacity < 1 ? j_header.style.background = "rgba(233, 35, 34, " + opacity + ")" : "";//这里有bug 后期调整
-        }
-
-    }
-
-    headerTop();
-
-    /*倒计时效果*/
-    function timeBakc() {
-        //总共时间
-        let allTime = 3700;
-        let timeSpans = document.querySelector(".jd_sk_time").querySelectorAll("span");
-        let timeInterval = setInterval(function () {
-            /*每次减1秒*/
-            allTime--;
-            //小时
-            let hour = Math.floor(allTime / 3600);
-            //分钟
-            let minute = Math.floor(allTime % 3600 / 60);
-            //毫秒
-            let second = Math.floor(allTime % 60);
-            timeSpans[0].innerHTML = Math.floor(hour / 10);
-            timeSpans[1].innerHTML = Math.floor(hour % 10);
-            timeSpans[3].innerHTML = Math.floor(minute / 10);
-            timeSpans[4].innerHTML = Math.floor(minute % 10);
-            timeSpans[6].innerHTML = Math.floor(second / 10);
-            timeSpans[7].innerHTML = Math.floor(second % 10);
-            /*判断是否时间都完成*/
-            if (hour === 0 && minute === 0 && second === 0) {
-                /*清除定时器*/
-                clearInterval(timeInterval);
-            }
-        }, 1000)
-    }
-
-    timeBakc();
-
     /*轮播区域*/
     function slide() {
         //轮播区域ul
@@ -101,4 +44,59 @@ window.onload = function () {
     }
 
     slide();
+
+    /*固定导航透明度*/
+    function headerTop() {
+        //获取固定导航
+        let j_header = document.querySelector(".j_header");
+        //获取轮播图
+        let j_slideshow = document.querySelector(".j_slideshow");
+        //获取轮播图的高度
+        let j_slideshowHeight = $(".j_slideshow").height();
+        console.log("事件外 轮播的高度" + j_slideshowHeight);
+        window.onscroll = function () {
+            //获取文档滚动出屏幕的top距离
+            let offerTop = $(document).scrollTop();
+            //设置rgba中的a 文档滚出屏幕的top距离除以轮播区域的高度
+            let opacity = offerTop / j_slideshowHeight;
+            //判断
+            opacity = opacity > 1 ? 1 : opacity;
+            //设置固定header的透明度
+            j_header.style.background = "rgba(233, 35, 34, " + opacity + ")";
+        }
+    }
+
+    headerTop();
+
+    /*倒计时效果*/
+    function timeBakc() {
+        //总共时间
+        let allTime = 3700;
+        let timeSpans = document.querySelector(".jd_sk_time").querySelectorAll("span");
+        let timeInterval = setInterval(function () {
+            /*每次减1秒*/
+            allTime--;
+            //小时
+            let hour = Math.floor(allTime / 3600);
+            //分钟
+            let minute = Math.floor(allTime % 3600 / 60);
+            //毫秒
+            let second = Math.floor(allTime % 60);
+            timeSpans[0].innerHTML = Math.floor(hour / 10);
+            timeSpans[1].innerHTML = Math.floor(hour % 10);
+            timeSpans[3].innerHTML = Math.floor(minute / 10);
+            timeSpans[4].innerHTML = Math.floor(minute % 10);
+            timeSpans[6].innerHTML = Math.floor(second / 10);
+            timeSpans[7].innerHTML = Math.floor(second % 10);
+            /*判断是否时间都完成*/
+            if (hour === 0 && minute === 0 && second === 0) {
+                /*清除定时器*/
+                clearInterval(timeInterval);
+            }
+        }, 1000)
+    }
+
+    timeBakc();
+
+
 };
