@@ -1,5 +1,5 @@
 //页面加载事件
-window.onload = function () {
+$(function () {
     /*轮播区域*/
     function slide() {
         //轮播区域ul
@@ -98,5 +98,4 @@ window.onload = function () {
 
     timeBakc();
 
-
-};
+});
