@@ -1,0 +1,302 @@
+.j_layout {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.j_header {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    background: rgba(233, 35, 34, 0);
+    z-index: 9999;
+    max-width: 640px;
+}
+
+.j_header > a {
+    display: inline-block;
+}
+
+.j_header > .j_logo {
+    width: 56px;
+    height: 30px;
+    background: url("../images/jd-sprites.png");
+    background-position: 0px -108px;
+    background-size: 200px 200px;
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+
+.j_header > form {
+    width: 100%;
+    height: 100%;
+    padding-left: 76px;
+    padding-right: 50px;
+}
+
+.j_header > form:after {
+    content: "";
+    display: inline-block;
+    width: 27px;
+    height: 23px;
+    background: url("../images/jd-sprites.png");
+    background-size: 200px 200px;
+    background-position: -56px -108px;
+    position: absolute;
+    left: 80px;
+    top: 9px;
+}
+
+.j_header > form > input {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 15px;
+    padding-left: 30px;
+    overflow: hidden;
+}
+
+.j_header > .j_login {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.j_header > .j_login:hover {
+    color: #666;
+}
+
+/*固定导航结束*/
+.j_slideshow {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.j_slideshow ul {
+    /*width: 900%;*/
+    font-size: 0;
+}
+
+.j_slideshow ul > li {
+    float: left;
+    /*width: 11.11%;*/
+    transition: transform 10s ease-in-out;
+}
+
+.j_slideshow > ul > li > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.j_slideshow > ul > li img {
+    width: 100%;
+    font-size: 0;
+}
+
+.j_slideshow > ol {
+    position: absolute;
+    left: 50%;
+    bottom: 9px;
+    transform: translateX(-50%);
+}
+
+.j_slideshow > ol > li {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    float: left;
+    margin-left: 10px;
+}
+
+.j_slideshow > ol .active {
+    background-color: #fff;
+}
+
+/*轮播结束*/
+.j_nav {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+.j_nav > ul > li {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.j_nav > ul > li > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
+}
+
+.j_nav > ul > li > a img {
+    width: 50px;
+    height: 50px;
+}
+
+/*nav结束*/
+.j_product {
+    width: 100%;
+}
+
+.j_product > .j_ms:before, .j_product > .j_cs:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #eee;
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+.j_product > .j_ms, .j_product > .j_cs {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px #ccc;
+    position: relative;
+    margin-top: 10px;
+}
+
+.j_product > .j_ms > header, .j_product .j_p_header {
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.j_product > .j_ms > header:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 20px;
+    background: url(../images/seckill-icon.png);
+    background-size: 16px 20px;
+    left: 10px;
+    top: 3px;
+}
+
+.j_product > .j_ms > header .f_left > span {
+    color: #e92322;
+    margin: 0 10px 0 35px;
+    float: left;
+}
+
+.j_product > .j_ms > header .f_left > .jd_sk_time {
+    float: left;
+}
+
+.j_product > .j_ms > header .f_left > .jd_sk_time > span {
+    width: 13px;
+    height: 18px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    float: left;
+    margin: 6px 3px 6px 0;
+}
+
+.j_product > .j_ms > header .f_left > .jd_sk_time > span:nth-of-type(3), .j_product > .j_ms > header .f_left > .jd_sk_time > span:nth-of-type(6) {
+    background-color: #fff;
+    color: #000;
+}
+
+.j_product > .j_ms > header .f_right a {
+    color: #666;
+    margin-right: 10px;
+}
+
+.j_product > .j_ms > main {
+    width: 100%;
+    padding: 18px 20px 24px;
+}
+
+.j_product > .j_ms > main > div {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+
+.j_product > .j_ms > main > div > a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border-right: 1px solid #ccc;
+}
+
+.j_product > .j_ms > main > div:last-of-type > a {
+    border: none;
+}
+
+.j_product > .j_ms > main > div > a img {
+    width: 60%;
+}
+
+.j_product .j_p_header:after {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 12px;
+    background-color: #e92322;
+    position: absolute;
+    top: 8px;
+    left: 22px;
+}
+
+.j_product .j_p_header {
+    border-bottom: 1px solid #ccc;
+}
+
+.j_product .j_p_header > span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #666;
+    padding-left: 30px;
+    float: left;
+    height: 100%;
+}
+
+.j_cs > main div {
+    width: 50%;
+    float: left;
+}
+
+.j_cs > main div a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    font-size: 0;
+    float: left;
+}
+
+.j_cs > main div img {
+    width: 100%;
+}
+
+.j_cs .border_l {
+    border-left: 1px solid #ccc;
+}
+
+.j_cs .border_b {
+    border-bottom: 1px solid #ccc;
+}
+
+/*京东超市结束*/

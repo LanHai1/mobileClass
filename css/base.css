@@ -1,0 +1,52 @@
+/*公共样式*/
+html, body, ul, li, ol, img, p, a, div, span, form, input,main {
+    margin: 0;
+    padding: 0;
+    /*设置盒模型*/
+    box-sizing: border-box;
+    /*去除移动端点击高亮效果 透明色*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: "微软雅黑", sans-serif;
+    font-size: 13px;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #666;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    outline: none;
+    border: none;
+    border: 1px solid #ccc;
+}
+
+/*添加新样式*/
+.f_left {
+    float: left;
+}
+
+.f_right {
+    float: right;
+}
+
+/*清除浮动*/
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    line-height: 0;
+}

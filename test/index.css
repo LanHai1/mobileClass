@@ -1,0 +1,122 @@
+.j_layout {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+.j_layout > header {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    z-index: 9999;
+    max-width: 640px;
+    top: 0;
+    background-color: #e92322;
+}
+
+.j_layout > header > a {
+    display: inline-block;
+    position: absolute;
+}
+
+.j_layout > header > .j_logo {
+    width: 56px;
+    height: 30px;
+    left: 10px;
+    top: 7px;
+    background: url("../images/jd-sprites.png");
+    background-size: 200px 200px;
+    background-position: 0 -108px;
+}
+
+.j_layout > header > .j_search {
+    width: 100%;
+    height: 100%;
+    padding-left: 76px;
+    padding-right: 50px;
+}
+
+.j_layout > header > .j_search > input {
+    height: 30px;
+    width: 100%;
+    border-radius: 15px;
+    color: #666;
+    padding-left: 30px;
+    margin-top: 5px;
+}
+
+.j_layout > header > .j_login {
+    width: 40px;
+    height: 40px;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+    text-align: left;
+}
+
+/*固定header搜索结束*/
+.j_layout > .j_slideshow {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.j_layout > .j_slideshow > ul {
+    width: 800%;
+    font-size: 0;
+}
+
+.j_layout > .j_slideshow > ul li {
+    float: left;
+    width: 12.5%;
+}
+
+.j_layout > .j_slideshow > ul li a, .j_layout > .j_slideshow > ol li a, .j_layout > .j_nav > ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.j_layout > .j_slideshow > ul li a > img {
+    width: 100%;
+}
+
+.j_layout > .j_slideshow > ol {
+    position: absolute;
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.j_layout > .j_slideshow > ol li {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+    float: left;
+    margin-left: 10px;
+}
+
+.j_layout > .j_slideshow > ol .current {
+    background-color: #fff;
+}
+
+/*轮播结束*/
+.j_layout > .j_nav > ul {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.j_layout > .j_nav > ul li {
+    width: 25%;
+    text-align: center;
+    float: left;
+    padding-bottom: 5px;
+}
+
+.j_layout > .j_nav > ul li img {
+    width: 50px;
+}
+
+/*nav结束*/
