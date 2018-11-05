@@ -49,20 +49,26 @@ $(function () {
     function headerTop() {
         //获取固定导航
         let j_header = document.querySelector(".j_header");
-        //获取轮播图
-        let j_slideshow = document.querySelector(".j_slideshow");
         //获取轮播图的高度
         let j_slideshowHeight = $(".j_slideshow").height();
-        console.log("事件外 轮播的高度" + j_slideshowHeight);
-        window.onscroll = function () {
+
+        /*设置透明度*/
+        function headerRgbA() {
             //获取文档滚动出屏幕的top距离
             let offerTop = $(document).scrollTop();
             //设置rgba中的a 文档滚出屏幕的top距离除以轮播区域的高度
             let opacity = offerTop / j_slideshowHeight;
+            console.log(offerTop,j_slideshowHeight,opacity)
             //判断
             opacity = opacity > 1 ? 1 : opacity;
             //设置固定header的透明度
             j_header.style.background = "rgba(233, 35, 34, " + opacity + ")";
+        }
+
+        headerRgbA();
+        //浏览器滚动事件
+        window.onscroll = function () {
+            headerRgbA();
         }
     }
 

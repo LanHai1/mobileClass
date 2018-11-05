@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--来自一个很想要很牛逼的程序员-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+<style>
+    .j_view {
+        width: 100%;
+        max-width: 640px;
+        min-width: 320px;
+        margin: 0 auto;
+    }
+
+    .j_view > header {
+        max-width: 640px;
+        width: 100%;
+        height: 40px;
+        background-color: rgba(233, 35, 34, 0);
+        position: fixed;
+        z-index: 9999;
+    }
+
+    header .j_logo > a {
+        width: 56px;
+        height: 30px;
+        position: absolute;
+        left: 10px;
+        top: 7px;
+        background: url("../images/jd-sprites.png");
+        background-size: 200px 200px;
+        display: inline-block;
+        background-position: 0 -108px;
+    }
+
+    header > form {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+        padding-left: 76px;
+        padding-right: 50px;
+    }
+
+    header > form > .j_search {
+        width: 100%;
+        height: 30px;
+        border-radius: 15px;
+        margin: 5px 0;
+        color: #999;
+        padding-left: 30px;
+    }
+
+    header > form:after {
+        content: "";
+        display: inline-block;
+        width: 27px;
+        height: 23px;
+        background: url(../images/jd-sprites.png);
+        background-size: 200px 200px;
+        background-position: -56px -108px;
+        position: absolute;
+        left: 80px;
+        top: 9px;
+    }
+
+    header .j_login > a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        text-align: left;
+        line-height: 40px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /*固定导航结束*/
+    .j_slideShow {
+        width: 100%;
+        max-width: 640px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .j_slideShow > ul {
+        width: 2000%;
+        font-size: 0;
+    }
+
+    .j_slideShow > ul > li {
+        float: left;
+    }
+
+    .j_slideShow > ul > li img {
+        width: 100%;
+    }
+
+    .j_slideShow > ol {
+        position: absolute;
+        bottom: 9px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .j_slideShow > ol > li {
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        border: 1px solid #fff;
+        float: left;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .j_slideShow > ol .active {
+        background-color: #fff;
+    }
+
+    .j_slideShow > ol > li > a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+
+    /*轮播区域结束*/
+    .j_nav {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #fff;
+    }
+
+    .j_nav > ul > li {
+        float: left;
+        width: 25%;
+        text-align: center;
+    }
+
+    .j_nav > ul > li > a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        margin: 10px 0;
+    }
+
+    .j_nav > ul > li > a > img {
+        width: 50px;
+    }
+
+    /*nav结束*/
+    main {
+        background-color: #fff;
+    }
+
+    main > .j_seckill > header {
+        width: 100%;
+        height: 30px;
+        position: relative;
+    }
+
+    main > .j_seckill header .f_left .j_ms {
+        color: #e92322;
+        margin: 0 10px 0 35px;
+        text-align: center;
+        line-height: 30px;
+        display: inline-block;
+        width: 52px;
+        height: 30px;
+        float: left;
+    }
+
+    main > .j_seckill header .f_left .j_ms:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 16px;
+        height: 20px;
+        background: url(../images/seckill-icon.png);
+        background-size: 16px 20px;
+        left: 10px;
+        top: 3px;
+    }
+
+    main > .j_seckill header .f_left > .jd_sk_time {
+        float: left;
+    }
+
+    main > .j_seckill header .f_left > .jd_sk_time > span {
+        width: 13px;
+        height: 18px;
+        background-color: #000;
+        color: #fff;
+        line-height: 18px;
+        text-align: center;
+        display: inline-block;
+        float: left;
+        margin: 6px 3px 6px 0;
+    }
+
+    main > .j_seckill header .f_left > .jd_sk_time > span:nth-child(3n) {
+        background-color: #fff;
+        color: #000;
+        width: 5px;
+    }
+
+    main > .j_seckill header .f_right > a {
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    main > .j_seckill > .j_seckillMain {
+        width: 100%;
+        padding: 18px 20px 24px;
+    }
+
+    main > .j_seckill > .j_seckillMain > div {
+        float: left;
+        text-align: center;
+        width: 33.33%;
+    }
+
+    main > .j_seckill > .j_seckillMain > div > a {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+
+    main > .j_seckill > .j_seckillMain > div > a img {
+        width: 60%;
+    }
+
+    /*掌上秒杀结束*/
+
+
+</style>
+<body>
+<div class="j_view">
+    <header>
+        <div class="j_logo">
+            <a href="#"></a>
+        </div>
+        <form action="">
+            <input type="text" class="j_search" placeholder="请输入商品名称">
+        </form>
+        <div class="j_login">
+            <a href="#">登录</a>
+        </div>
+    </header><!--固定导航结束-->
+    <div class="j_slideShow">
+        <ul class="clearfix">
+            <li><a href="#"><img src="../images/l1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l6.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l7.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../images/l8.jpg" alt=""></a></li>
+        </ul>
+        <ol class="clearfix"></ol>
+    </div><!--轮播区域结束-->
+    <div class="j_nav">
+        <ul class="clearfix">
+            <li><a href="#"><img src="../images/nav0.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav1.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav2.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav3.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav4.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav5.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav6.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+            <li><a href="#"><img src="../images/nav7.png" alt="">
+                <p>商品分类</p>
+            </a></li>
+        </ul>
+    </div><!--nav结束-->
+    <main>
+        <div class="j_seckill">
+            <header class="clearfix">
+                <div class="f_left">
+                    <span class="j_ms">掌上秒杀</span>
+                    <div class="jd_sk_time clearfix" data-alltime="12600">
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span>:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="f_right"><a href="#">更多秒杀...</a></div>
+            </header>
+            <div class="j_seckillMain">
+                <div>
+                    <a href="#"><img src="../images/detail01.jpg" alt=""></a>
+                    <p>¥10.00</p>
+                    <p>
+                        <del>¥20.00</del>
+                    </p>
+                </div>
+                <div>
+                    <a href="#"><img src="../images/detail02.jpg" alt=""></a>
+                    <p>¥10.00</p>
+                    <p>
+                        <del>¥20.00</del>
+                    </p>
+                </div>
+                <div>
+                    <a href="#"><img src="../images/detail01.jpg" alt=""></a>
+                    <p>¥10.00</p>
+                    <p>
+                        <del>¥20.00</del>
+                    </p>
+                </div>
+            </div>
+        </div><!--掌上秒杀结束-->
+    </main>
+
+</div>
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
