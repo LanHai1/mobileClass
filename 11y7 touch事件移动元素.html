@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--来自一个很想要很牛逼的程序员-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div, span {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to right, yellow, red);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<span></span>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(function () {
+        let startX, startY, moveX, moveY, X, Y;
+        $(document).on("touchstart", function (e) {
+            e = event || e;
+            startX = e.targetTouches[0].clientX;
+            startY = e.targetTouches[0].clientY;
+        }).on("touchmove", function (e) {
+            e = event || e;
+            moveX = e.targetTouches[0].clientX;
+            moveY = e.targetTouches[0].clientY;
+            X = moveX - startX;
+            Y = moveY - startY;
+            $(e.target).css("transform", "translate(" + X + "px," + Y + "0px)");
+        })
+    });
+    /*$(function () {
+
+        let distanceX, distanceY;
+
+        function move(ele, fn) {
+            let startX, startY, moveX, moveY, endX = 0, endY = 0;
+            //手指开始时触摸事件
+            ele.on("touchstart", function (e) {
+                e = event || e;
+                // $(this).css("transform", "translate(" + distanceX + "px," + distanceY + "px)");
+                //触摸时手指的X，Y
+                startX = e.targetTouches[0].clientX;
+                startY = e.targetTouches[0].clientY;
+                console.log("触摸时的X，Y" + e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+            }).on("touchmove", function (e) {//手指触摸屏幕移动事件
+                e = event || e;
+                //移动的X，Y
+                moveX = e.targetTouches[0].clientX;
+                moveY = e.targetTouches[0].clientY;
+                console.log("移动的X，Y" + moveX, moveY);
+                //元素的X，Y(移动的X，Y减去触摸时手指的X，Y)
+                distanceX = endX + moveX - startX;
+                distanceY = endY + moveY - startY;
+                //设置元素translate
+                $(this).css("transform", "translate(" + distanceX + "px," + distanceY + "px)");
+            }).on("touchend", function (e) {
+                /!* e = event || e;
+                 console.log(e)
+                 endX = e.changedTouches[0].clientX;
+                 endY = e.changedTouches[0].clientY;*!/
+
+            });
+            if (fn) {
+                fn();
+            }
+        }
+
+        move($("div"), function () {
+            move($("span"));
+        });
+        /!*move($("span"));*!/
+        /!*let startX, startY, moveX, moveY, distanceX, distanceY;
+        //手指开始时触摸事件
+        $("div").on("touchstart", function (e) {
+            e = event || e;
+            /!*distanceX = parseFloat($('div').css("transform").replace(/[^0-9\-,]/g, '').split(',')[4]);//translateX
+            distanceY = parseFloat($('div').css("transform").replace(/[^0-9\-,]/g, '').split(',')[5]);//translateY
+            console.log(distanceX, distanceY);*!/
+            $(this).css("transform", "translate(" + distanceX + "px," + distanceY + "px)");
+            //触摸时手指的X，Y
+            startX = e.targetTouches[0].clientX;
+            startY = e.targetTouches[0].clientY;
+            console.log("触摸时的X，Y" + e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+        }).on("touchmove", function (e) {//手指触摸屏幕移动事件
+            e = event || e;
+            //移动的X，Y
+            moveX = e.targetTouches[0].clientX;
+            moveY = e.targetTouches[0].clientY;
+            console.log("移动的X，Y" + moveX, moveY);
+            //元素的X，Y(移动的X，Y减去触摸时手指的X，Y)
+            distanceX = moveX - startX;
+            distanceY = moveY - startY;
+            //设置元素translate
+            $(this).css("transform", "translate(" + distanceX + "px," + distanceY + "px)");
+        });*!/
+    });*/
+</script>
+</body>
+</html>
